@@ -32,7 +32,7 @@
 - PKCS#7 Padding (Public-Key Cryptography Standards #7 Padding) là một thuật toán đệm (padding) được sử dụng trong quá trình mã hóa đối xứng, như block cipher, để đảm bảo rằng dữ liệu đầu vào có độ dài tương thích với kích thước khối (block size) của thuật toán mã hóa
 - PKCS#7 Padding hoạt động bằng cách thêm vào cuối dữ liệu một số byte để đạt được độ dài mong muốn. Giá trị của các byte được thêm vào sẽ là số byte cần thêm. Ví dụ, nếu block size của thuật toán là 8 byte và dữ liệu cần được mã hóa chỉ có 5 byte, thì 3 byte có giá trị là 03 sẽ được thêm vào cuối.
 - PKCS#7 Padding được sử dụng rộng rãi trong nhiều giao thức và tiêu chuẩn bảo mật, chẳng hạn như SSL/TLS, CMS (Cryptographic Message Syntax), và PKCS#5/PKCS#12 (Password-Based Encryption Standard). Nó giúp đảm bảo rằng dữ liệu được mã hóa luôn có độ dài bằng một bội số của kích thước khối, đồng thời cung cấp tính toàn vẹn và khả năng phục hồi đúng dữ liệu gốc sau khi giải mã.
-```python=
+```python3
 def pkcs7(a, b):
     pad_size = b - len(a) % b
     pad = bytes([pad_size] * pad_size)
